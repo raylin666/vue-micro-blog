@@ -4,9 +4,9 @@ import { ArticleInfo, ArticleList, NewArticleListItem } from '@/types/article'
 // 请求文章列表接口
 export function requestArticleList(page: number, size: number) {
     return request<ArticleList>({
-        url: '/article/list',
+        url: '/api.article/list',
         method: 'get',
-        data: { page, size }
+        params: { page, size }
     })
 }
 

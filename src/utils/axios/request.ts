@@ -18,23 +18,28 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
     response => {
-        const res = response.data
-        if (res.status != 200) {
+        if ((response.status != 200) || response.data.code) {
             const defaultMessage = '内部未知错误'
             Message.error({
-                content: res.message || defaultMessage,
+                content: response.data.message || defaultMessage,
                 duration: 5 * 1000,
             })
 
-            return Promise.reject(new Error(res.message || defaultMessage))
+            return Promise.reject(new Error(response.data.message || defaultMessage))
         }
 
-        return res
+        return response
     },
     error => {
         console.log('错误信息:' + error)   // for debug
+
+        let errMsg = error.message
+        if (error.response.data.message) {
+            errMsg = '业务错误- ' + error.response.data.message
+        }
+
         Message.error({
-            content: error.message,
+            content: errMsg,
             duration: 5 * 1000,
         })
 

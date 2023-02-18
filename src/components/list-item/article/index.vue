@@ -15,13 +15,13 @@
         </div>
         <div class="tag">
           <a-space>
-            <span v-for="(item, index) in listItem?.tags" :key="index">
+            <span v-for="(item, index) in listItem?.category" :key="index">
               <a-tag :color="item.color">{{ item.name }}</a-tag>
             </span>
           </a-space>
         </div>
         <div class="desc">
-          {{ listItem?.description }}
+          {{ listItem?.summary }}
         </div>
         <div class="action">
           <a-row>

@@ -8,8 +8,8 @@ export interface ArticleListItem {
     cover: string;
     title: string;
     time: string;
-    tags?: TagsItem[];
-    description: string;
+    category?: TagsItem[];
+    summary: string;
     avatar: string;
     author: string;
     zanCount: number;
@@ -22,8 +22,8 @@ export interface ArticleListItem {
  * 文章列表接口
  */
 export interface ArticleList {
-    list: ArticleListItem[];
-    count: number;
+    list: Array<ArticleListItem>;
+    count: string;
 }
 
 /**

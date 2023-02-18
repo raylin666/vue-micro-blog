@@ -3,7 +3,9 @@
 interface ImportMetaEnv {
     readonly VITE_APP_TITLE: string
     readonly VITE_API_BASIC_PROXY_PASS: string
+    readonly VITE_API_ARTICLE_PROXY_PASS: string
     readonly VITE_API_BASIC_URL: string
+    readonly VITE_API_ARTICLE_URL: string
 }
 
 interface ImportMeta {

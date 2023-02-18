@@ -29,7 +29,7 @@ onMounted(() => {
   // 请求文章列表数据
   requestArticleList(page, size).then(response => {
     listItem.value = response.data.list
-    listCount.value = response.data.count
+    listCount.value = parseInt(response.data.count)
   })
 })
 </script>
