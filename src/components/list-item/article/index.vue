@@ -90,6 +90,7 @@ const props = defineProps({
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     margin-bottom: 12px;
+    height: 71px;
   }
   .action {
     color: #9c9999;

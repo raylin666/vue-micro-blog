@@ -4,7 +4,7 @@
       <a-col :span="12">
         <div class="tag">
           <a-space>
-            <span v-for="(item, index) in info?.tags" :key="index">
+            <span v-for="(item, index) in info?.category" :key="index">
               <a-tag :color="item.color">{{ item.name }}</a-tag>
             </span>
           </a-space>

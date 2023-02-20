@@ -45,8 +45,8 @@ export interface ArticleInfo {
     title: string;
     time: string;
     date: string;
-    tags?: TagsItem[];
-    description: string;
+    category?: TagsItem[];
+    summary: string;
     avatar: string;
     author: string;
     zanCount: number;
