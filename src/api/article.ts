@@ -21,7 +21,7 @@ export function requestNewArticleList() {
 // 请求文章详情接口
 export function requestArticleInfo(id: number) {
     return request<ArticleInfo>({
-        url: '/article/info/' + id,
+        url: '/api.article/info/' + id,
         method: 'get',
     })
 }

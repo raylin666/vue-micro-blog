@@ -43,12 +43,12 @@
     <a-row>
       <a-col :span="10">
         <div class="prev-title" v-if="info?.prevArticle?.id">
-          <router-link :to="{ name: 'articleInfo', params: { id: info?.prevArticle.id } }">上一篇: {{ info?.prevArticle.title }}</router-link>
+          <router-link :to="{ name: 'articleInfo', params: { id: info?.prevArticle?.id } }">上一篇: {{ info?.prevArticle.title }}</router-link>
         </div>
       </a-col>
       <a-col :span="10" :offset="4">
         <div class="next-title" v-if="info?.nextArticle?.id">
-          <router-link :to="{ name: 'articleInfo', params: { id: info?.nextArticle.id } }">下一篇: {{ info?.nextArticle.title }}</router-link>
+          <router-link :to="{ name: 'articleInfo', params: { id: info?.nextArticle?.id } }">下一篇: {{ info?.nextArticle.title }}</router-link>
         </div>
       </a-col>
     </a-row>
@@ -61,7 +61,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { IconThumbUp, IconHeart, IconEye, IconMessage } from '@arco-design/web-vue/es/icon'
 import { requestArticleInfo } from '@/api/article'
@@ -79,13 +79,22 @@ onMounted(() => {
     id.value = parseInt(router.currentRoute.value.params.id)
   }
 
-  // 测试 mock, 默认固定值。请求真实接口地址时需要删除该代码
-  id.value = 0
+  // 请求文章详情数据
+  requestArticleInfo(id.value).then(response => {
+    info.value = response.data
+  })
+})
+
+watch(router.currentRoute, () => {
+  if (isArray(router.currentRoute.value.params.id)) {
+    id.value = parseInt(router.currentRoute.value.params.id[0])
+  } else {
+    id.value = parseInt(router.currentRoute.value.params.id)
+  }
 
   // 请求文章详情数据
   requestArticleInfo(id.value).then(response => {
     info.value = response.data
-    info.value.contentLength = '3K'
   })
 })
 </script>

@@ -6,7 +6,7 @@
     <a-col :span="16">
       <div class="info">
         <div class="title">
-          <router-link :to="{ name: 'articleInfo', params: { id: listItem?.id } }">{{ listItem?.title }}</router-link>
+          <a v-on:click="jumpArticleInfo(listItem?.id)">{{ listItem?.title }}</a>
         </div>
         <div style="float: left">
           <a-space>
@@ -59,11 +59,18 @@
 <script setup lang="ts">
 import { IconThumbUp, IconHeart, IconEye, IconMessage } from '@arco-design/web-vue/es/icon'
 import { ArticleListItem } from '@/types/article'
+import { useRouter } from 'vue-router'
 import { PropType } from 'vue'
+
+const router = useRouter()
 
 const props = defineProps({
   listItem: Object as PropType<ArticleListItem>,
 })
+
+function jumpArticleInfo(id: number|undefined) {
+  router.push({ name: 'articleInfo', params: { id: id } })
+}
 </script>
 
 <style lang="less" scoped>
@@ -76,6 +83,7 @@ const props = defineProps({
     font-size: 18px;
     font-weight: 420;
     margin-bottom: 14px;
+    cursor:pointer;
   }
   .tag {
     float: right;
