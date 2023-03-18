@@ -34,7 +34,7 @@ export default defineConfig(({ command, mode }) => {
     },
     server: {
       // 指定服务器应该监听哪个 IP 地址
-      host: '127.0.0.1',
+      host: '0.0.0.0',
       // 指定开发服务器端口
       port: 3000,
       // 设为 true 时若端口已被占用则会直接退出，而不是尝试下一个可用端口
