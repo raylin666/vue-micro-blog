@@ -25,9 +25,9 @@ import {
   BlockLayoutHeaderMenu,
   BlockLayoutHeaderSearch,
 } from '@/components'
-import { headerMenu } from '@/types/menu'
+import { HeaderMenu } from '@/types/menu'
 
-const headerMenuList = computed<headerMenu[]>(() => [
+const headerMenuList = computed<HeaderMenu[]>(() => [
   {
     title: '首页',
     name: 'home',

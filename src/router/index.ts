@@ -1,17 +1,18 @@
-import {createRouter, createWebHistory} from 'vue-router'
+import {RouteRecordRaw, createRouter, createWebHistory} from 'vue-router'
 
 // 默认布局 (整个内容块)
 export const BASIC_LAYOUT = () => import('@/layout/basic-layout.vue')
 // 侧栏布局 (带有侧边栏内容块)
 export const SIDER_LAYOUT = () => import('@/layout/sider-layout.vue')
 
-const routes = [
+const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
         name: 'index',
         component: SIDER_LAYOUT,
         meta: {},
         redirect: 'article',
+        children: [],
     },
     {
         path: '/article',
