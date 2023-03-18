@@ -40,7 +40,7 @@ export default defineConfig(({ command, mode }) => {
       // 设为 true 时若端口已被占用则会直接退出，而不是尝试下一个可用端口
       strictPort: true,
       // 在开发服务器启动时自动在浏览器中打开应用程序。当此值为字符串时，会被用作 URL 的路径名。若你想指定喜欢的浏览器打开服务器，你可以设置环境变量 process.env.BROWSER（例如：firefox）
-      open: true,
+      open: false,
       fs: {
         // 限制为工作区 root 路径以外的文件的访问
         strict: true,
