@@ -37,7 +37,11 @@
       <a-tag>正文内容 - 字数 {{ info?.contentLength }}</a-tag>
     </a-divider>
     <div class="content">
-      {{ info?.content }}
+      <MdEditor 
+        v-model="infoContent"
+        :previewTheme="previewTheme"
+        :previewOnly="true"
+      />
     </div>
     <a-divider />
     <a-row>
@@ -67,11 +71,16 @@ import { IconThumbUp, IconHeart, IconEye, IconMessage } from '@arco-design/web-v
 import { requestArticleInfo } from '@/api/article'
 import { ArticleInfo } from '@/types/article';
 import { isArray } from '@/utils/is';
+import MdEditor from 'md-editor-v3';
+import 'md-editor-v3/lib/style.css';
 
 const router = useRouter()
 
 const id = ref(0)
 const info = ref<ArticleInfo>()
+// 预览内容主题: 'default' | 'github' | 'vuepress' | 'mk-cute' | 'smart-blue' | 'cyanosis'
+const previewTheme = 'smart-blue'
+const infoContent = ref('')
 onMounted(() => {
   if (isArray(router.currentRoute.value.params.id)) {
     id.value = parseInt(router.currentRoute.value.params.id[0])
@@ -82,6 +91,7 @@ onMounted(() => {
   // 请求文章详情数据
   requestArticleInfo(id.value).then(response => {
     info.value = response.data
+    infoContent.value = info.value.content
   })
 })
 
@@ -95,6 +105,9 @@ watch(router.currentRoute, () => {
   // 请求文章详情数据
   requestArticleInfo(id.value).then(response => {
     info.value = response.data
+    infoContent.value = info.value.content
+    // 滚到顶部
+    window.scrollTo(0, 0)
   })
 })
 </script>
