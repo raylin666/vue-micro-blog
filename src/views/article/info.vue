@@ -11,7 +11,7 @@
         </div>
       </a-col>
       <a-col :span="12">
-        <a-space size="large" style="float: right;">
+        <a-space size="large" style="float: right; margin-top: 8px;">
           <div>
             <IconThumbUp /> {{ info?.zanCount }}
           </div>
@@ -27,15 +27,16 @@
         </a-space>
       </a-col>
     </a-row>
-    <a-divider orientation="center">
-      <a-tag color="magenta">作者 {{ info?.author }} 于 {{ info?.time }} - {{ info?.date }} 发布</a-tag>
+    <a-divider orientation="center" style="border-color: white">
+      <a-tag color="arcoblue">作者 {{ info?.author }} 于 {{ info?.time }} - {{ info?.date }} 发布</a-tag>
     </a-divider>
-    <div class="title">
-      {{ info?.title }}
-    </div>
-    <a-divider orientation="right" style="margin-top: 25px;">
-      <a-tag>正文内容 - 字数 {{ info?.contentLength }}</a-tag>
-    </a-divider>
+    <div class="cover" :style="{backgroundImage: `url(${info?.cover})`}"></div>
+    <a-row>
+      <a-col :span="24" class="title">
+        {{ info?.title }}
+      </a-col>
+    </a-row>
+    <a-divider orientation="right" style="margin-top: 25px;"></a-divider>
     <div class="content">
       <MdEditor 
         v-model="infoContent"
@@ -79,7 +80,7 @@ const router = useRouter()
 const id = ref(0)
 const info = ref<ArticleInfo>()
 // 预览内容主题: 'default' | 'github' | 'vuepress' | 'mk-cute' | 'smart-blue' | 'cyanosis'
-const previewTheme = 'smart-blue'
+const previewTheme = 'vuepress'
 const infoContent = ref('')
 onMounted(() => {
   if (isArray(router.currentRoute.value.params.id)) {
@@ -114,19 +115,24 @@ watch(router.currentRoute, () => {
 
 <style lang="less" scoped>
 .detail {
-  .title {
-    text-align: center;
-    padding: 180px 0;
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: 420;
-    margin-top: 30px;
-    text-shadow: 1px 0 1px grey;
-    opacity: 0.9;
+  :deep(.arco-divider-text) {
+    margin-top: 11px;
+    padding: 0;
+  }
+  .cover {
+    padding: 240px 0;
+    margin-top: -20px;
+    opacity: 1;
     background-image: url('http://cdn.ls331.com/storage/blogHomeBackgroundImage2021.jpg');
     background-size: cover;
     // background-position: center center;
-    border-radius: 10px;
+    border-radius: 3px;
+  }
+  .title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 30px 0 10px 0;
   }
   .content-from {
     margin-top: 20px;
