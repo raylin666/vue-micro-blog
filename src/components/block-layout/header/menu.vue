@@ -3,9 +3,13 @@
     <a-menu mode="horizontal" :default-selected-keys="['home']">
       <a-menu-item v-for="(item, index) in props.list" :key="item.name">
         <div v-if="item.isBadge">
-          <a-badge :text="item.badgeText" :offset="[20, -6]" :dotStyle="{ background: item.badgeBg, color: '#ffffff', width: '40px', height: '20px' }">{{ item.title }}</a-badge>
+          <a-badge :text="item.badgeText" :offset="[20, -6]" :dotStyle="{ background: item.badgeBg, color: '#ffffff', width: '40px', height: '20px' }">
+           <router-link :to="{ name: item.targetName, params: {} }">{{ item.title }}</router-link>
+          </a-badge>
         </div>
-        <div v-else>{{ item.title }}</div>
+        <div v-else>
+          <router-link :to="{ name: item.targetName, params: {} }">{{ item.title }}</router-link>
+        </div>
       </a-menu-item>
     </a-menu>
   </div>

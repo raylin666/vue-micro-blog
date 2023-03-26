@@ -7,5 +7,5 @@ export interface HeaderMenu {
     isBadge?: boolean;
     badgeText?: string;
     badgeBg?: string;
-    target?: string;
+    targetName?: string;
 }

@@ -16,6 +16,9 @@ import {
   CardArticleListItem,
 } from '@/components'
 import { requestArticleList } from '@/api/article'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 // 列表数据
 const listItem = ref()

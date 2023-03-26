@@ -31,6 +31,7 @@ const headerMenuList = computed<HeaderMenu[]>(() => [
   {
     title: '首页',
     name: 'home',
+    targetName: 'article',
   },
   {
     title: '快讯',

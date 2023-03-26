@@ -97,6 +97,10 @@ onMounted(() => {
 })
 
 watch(router.currentRoute, () => {
+  if (router.currentRoute.value.name !== 'articleInfo') {
+    return 
+  }
+
   if (isArray(router.currentRoute.value.params.id)) {
     id.value = parseInt(router.currentRoute.value.params.id[0])
   } else {

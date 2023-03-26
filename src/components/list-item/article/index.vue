@@ -69,7 +69,7 @@ const props = defineProps({
 })
 
 function jumpArticleInfo(id: number|undefined) {
-  router.push({ name: 'articleInfo', params: { id: id } })
+  router.push({ name: 'articleInfo', params: { id: id }})
 }
 </script>
 
