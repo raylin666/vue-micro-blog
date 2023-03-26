@@ -29,33 +29,33 @@ import { HeaderMenu } from '@/types/menu'
 
 const headerMenuList = computed<HeaderMenu[]>(() => [
   {
-    title: '首页',
+    title: '博文',
     name: 'home',
-    targetName: 'article',
+    targetName: 'index',
   },
-  {
-    title: '快讯',
-    name: 'kuaiXun',
-  },
-  {
-    title: '专题',
-    name: 'zhuanTi',
-  },
-  {
-    title: '商城',
-    name: 'shangCheng',
-  },
-  {
-    title: '导航',
-    name: 'daoHang',
-  },
-  {
-    title: '圈子',
-    name: 'quanZi',
-    isBadge: true,
-    badgeText: '交流',
-    badgeBg: 'blue',
-  },
+  // {
+  //   title: '快讯',
+  //   name: 'kuaiXun',
+  // },
+  // {
+  //   title: '专题',
+  //   name: 'zhuanTi',
+  // },
+  // {
+  //   title: '商城',
+  //   name: 'shangCheng',
+  // },
+  // {
+  //   title: '导航',
+  //   name: 'daoHang',
+  // },
+  // {
+  //   title: '圈子',
+  //   name: 'quanZi',
+  //   isBadge: true,
+  //   badgeText: '交流',
+  //   badgeBg: 'blue',
+  // },
 ])
 </script>
 

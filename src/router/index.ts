@@ -11,7 +11,7 @@ const routes: Array<RouteRecordRaw> = [
         name: 'index',
         component: SIDER_LAYOUT,
         meta: {},
-        redirect: 'article',
+        redirect: '/article',
         children: [],
     },
     {
