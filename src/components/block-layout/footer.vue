@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>本站已安全运行 <span>{{ dateTime }}</span></p>
-    <p>Copyright © {{ betDate }} {{ author }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ keepRecordIdent }}</p>
+    <p>Copyright © {{ betDate }} {{ author }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://beian.miit.gov.cn/" target="_blank">{{ keepRecordIdent }}</a></p>
   </div>
 </template>
 
