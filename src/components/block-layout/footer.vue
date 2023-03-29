@@ -26,5 +26,8 @@ div {
   p {
     line-height: 40px;
   }
+  a {
+    color: white;
+  }
 }
 </style>
