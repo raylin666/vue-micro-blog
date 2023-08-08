@@ -16,3 +16,7 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv
 }
+
+// 粒子动效
+declare module 'particles.vue3'
+declare module 'tsparticles'

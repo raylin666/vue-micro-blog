@@ -8,6 +8,7 @@ import i18n from './locale'
 import router from './router'
 import store from './store'
 import './mock'
+import Particles from 'particles.vue3'
 
 const app = createApp(App)
 
@@ -20,4 +21,7 @@ app.use(ArcoVueIcon)
 app.use(i18n)
 app.use(router)
 app.use(store)
+
+app.use(Particles)
+
 app.mount('#app')
