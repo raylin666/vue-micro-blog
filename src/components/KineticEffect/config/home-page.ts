@@ -36,10 +36,10 @@ const particlesHomePage = {
   },
   particles: {
     color: {
-      value: '#43d5a2'
+      value: '#ffffff'
     },
     links: {
-      color: '#d543a4', // '#dedede' 线条颜色。
+      color: '#ffffff', // '#dedede' 线条颜色。
       distance: 100, // 线条长度
       enable: false, // 是否有线条
       opacity: 0.5, // 线条透明度。
@@ -53,7 +53,7 @@ const particlesHomePage = {
       enable: true,
       outMode: 'bounce',
       random: false,
-      speed: 3, // 粒子运动速度。
+      speed: 1, // 粒子运动速度。
       straight: false
     },
     number: {

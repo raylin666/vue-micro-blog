@@ -1,10 +1,7 @@
 <template>
-  <Particles />
   <router-view></router-view>
 </template>
 
-<script setup lang="ts">
-  import Particles from '@/components/KineticEffect/particles.vue'
-</script>
+<script setup lang="ts"></script>
 
 <style scoped></style>
