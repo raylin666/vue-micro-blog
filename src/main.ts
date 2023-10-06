@@ -9,6 +9,7 @@ import router from './router'
 import store from './store'
 import './mock'
 import Particles from 'particles.vue3'
+import VueTyped from 'vue3typed'
 
 const app = createApp(App)
 
@@ -22,6 +23,9 @@ app.use(i18n)
 app.use(router)
 app.use(store)
 
+// 导入粒子动效
 app.use(Particles)
+// 导入打字机动效
+app.use(VueTyped)
 
 app.mount('#app')

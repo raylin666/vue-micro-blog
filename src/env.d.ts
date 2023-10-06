@@ -20,3 +20,5 @@ interface ImportMeta {
 // 粒子动效
 declare module 'particles.vue3'
 declare module 'tsparticles'
+// 打字机动效
+declare module 'vue3typed'

@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-  import { reactive } from 'vue'
+  import { PropType } from 'vue'
   import { loadFull } from 'tsparticles'
   import type { Engine } from 'tsparticles-engine'
   import particlesHomePage from './config/home-page'
@@ -22,7 +22,14 @@
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const particlesLoaded = async (_container: any) => {}
 
-  const options = reactive(particlesHomePage)
+  defineProps({
+    options: {
+      type: Object as PropType<object>,
+      default() {
+        return particlesHomePage
+      }
+    }
+  })
 </script>
 
 <style scoped></style>

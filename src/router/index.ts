@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-export const DEFAULT_LAYOUT = () => import('@/layout/basic-layout.vue')
+export const INDEX_LAYOUT = () => import('@/layout/index-layout.vue')
 
 const routes = [
   {
     path: '/',
     name: 'index',
-    component: DEFAULT_LAYOUT,
+    component: INDEX_LAYOUT,
     meta: {},
     children: [
       {
