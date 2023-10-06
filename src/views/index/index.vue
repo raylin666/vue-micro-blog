@@ -1,7 +1,7 @@
 <template>
   <Particles />
   <div id="header">
-    <HeaderMenu />
+    <LayoutHeaderMenu />
 
     <a-row>
       <a-col :span="8" :offset="8" class="header-content">
@@ -44,7 +44,7 @@
       <a-col :span="3"></a-col>
       <a-col :span="18">
         <a-row>
-          <a-col :span="18">
+          <a-col :span="16">
             <a-carousel
               :autoPlay="true"
               animation-name="card"
@@ -68,9 +68,17 @@
                 />
               </a-carousel-item>
             </a-carousel>
+
+            <br />
+            <div class="article-list">
+              <div class="item" v-for="(item, index) in listItem" :key="index">
+                <LayoutListItemArticle :list-item="item" />
+                <a-divider />
+              </div>
+            </div>
           </a-col>
 
-          <a-col :span="6"></a-col>
+          <a-col :span="8"></a-col>
         </a-row>
       </a-col>
       <a-col :span="3"></a-col>
@@ -79,9 +87,15 @@
 </template>
 
 <script setup lang="ts">
-  import Particles from '@/components/Particles/index.vue'
-  import VueTyped from '@/components/VueTyped/index.vue'
-  import HeaderMenu from '@/components/Layout/header-menu.vue'
+  import { ref, onMounted } from 'vue'
+  import { requestIndexArticleList } from '@/api/article'
+  import {
+    LayoutHeaderMenu,
+    LayoutListItemArticle,
+    Particles,
+    VueTyped
+  } from '@/components'
+
   import image1 from '@/assets/image/background.jpg'
   import image2 from '@/assets/image/background_1.jpg'
 
@@ -111,6 +125,142 @@
   }
 
   const images = [image1, image2, image1, image2]
+
+  // 列表数据
+  const listItem = ref()
+  // 列表数量
+  const listCount = ref(0)
+  // 分页页码
+  const page = 1
+  // 分页数量
+  const size = 10
+
+  onMounted(() => {
+    listItem.value = [
+      {
+        id: 1,
+        title: ' CSS3 实现翻转动效',
+        cover: image1,
+        time: '2023年02月10日 20时23分',
+        category: [
+          {
+            name: 'PHP',
+            color: 'red'
+          },
+          {
+            name: 'JavaScript',
+            color: 'blue'
+          }
+        ],
+        summary:
+          '快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck',
+        avatar: '林山',
+        zanCount: 20,
+        collectionCount: 0,
+        commentCount: 12,
+        viewCount: 3929
+      },
+      {
+        id: 1,
+        title: ' CSS3 实现翻转动效',
+        cover: image1,
+        time: '2023年02月10日 20时23分',
+        category: [
+          {
+            name: 'PHP',
+            color: 'red'
+          },
+          {
+            name: 'JavaScript',
+            color: 'blue'
+          }
+        ],
+        summary:
+          '快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck',
+        avatar: '林山',
+        zanCount: 20,
+        collectionCount: 0,
+        commentCount: 12,
+        viewCount: 3929
+      },
+      {
+        id: 1,
+        title: ' CSS3 实现翻转动效',
+        cover: image1,
+        time: '2023年02月10日 20时23分',
+        category: [
+          {
+            name: 'PHP',
+            color: 'red'
+          },
+          {
+            name: 'JavaScript',
+            color: 'blue'
+          }
+        ],
+        summary:
+          '快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck',
+        avatar: '林山',
+        zanCount: 20,
+        collectionCount: 0,
+        commentCount: 12,
+        viewCount: 3929
+      },
+      {
+        id: 1,
+        title: ' CSS3 实现翻转动效',
+        cover: image1,
+        time: '2023年02月10日 20时23分',
+        category: [
+          {
+            name: 'PHP',
+            color: 'red'
+          },
+          {
+            name: 'JavaScript',
+            color: 'blue'
+          }
+        ],
+        summary:
+          '快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck',
+        avatar: '林山',
+        zanCount: 20,
+        collectionCount: 0,
+        commentCount: 12,
+        viewCount: 3929
+      },
+      {
+        id: 1,
+        title: ' CSS3 实现翻转动效',
+        cover: image1,
+        time: '2023年02月10日 20时23分',
+        category: [
+          {
+            name: 'PHP',
+            color: 'red'
+          },
+          {
+            name: 'JavaScript',
+            color: 'blue'
+          }
+        ],
+        summary:
+          '快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck',
+        avatar: '林山',
+        zanCount: 20,
+        collectionCount: 0,
+        commentCount: 12,
+        viewCount: 3929
+      }
+    ]
+    // 请求文章列表数据
+    requestIndexArticleList(page, size).then(
+      (response: { data: { list: any; count: string } }) => {
+        listItem.value = response.data.list
+        listCount.value = parseInt(response.data.count)
+      }
+    )
+  })
 </script>
 
 <style scoped>
@@ -122,7 +272,7 @@
   #header .header-content {
     padding-left: 6px;
     padding-top: 340px;
-    height: 98vh;
+    height: 93vh;
   }
   #header .header-content .center-text {
     font-size: 2.2rem;
@@ -174,5 +324,18 @@
     to {
       transform: translateY(32px);
     }
+  }
+
+  #content {
+    background-color: #fafafa;
+    padding-top: 40px;
+  }
+
+  #content .article-list {
+    padding: 20px 16px;
+  }
+
+  :deep(.arco-pagination-size-large .arco-pagination-item) {
+    border-radius: 20px;
   }
 </style>
