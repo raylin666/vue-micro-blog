@@ -4,7 +4,7 @@
     <LayoutHeaderMenu />
 
     <a-row>
-      <a-col :span="8" :offset="8" class="header-content">
+      <a-col :span="24" class="header-content">
         <div class="center-text">
           <div>{{ title }}</div>
           <VueTyped
@@ -20,7 +20,7 @@
     </a-row>
 
     <a-row>
-      <a-col :span="1" :offset="11" style="padding-left: 40px">
+      <a-col :span="1" :offset="11" style="padding-left: 2.5rem">
         <div id="scroll-down" @click="goContentView">
           <svg
             class="icon scroll-down-effects"
@@ -270,8 +270,7 @@
     height: 100vh;
   }
   #header .header-content {
-    padding-left: 6px;
-    padding-top: 340px;
+    padding-top: 38vh;
     height: 93vh;
   }
   #header .header-content .center-text {
@@ -280,7 +279,7 @@
     color: #fff;
     text-align: center;
     text-shadow: 0 0.1875rem 0.3125rem #1c1f21;
-    padding: 0 56px;
+    padding: 0 7.6rem;
     letter-spacing: 0.25rem;
   }
   .vue-typed-style {
@@ -289,7 +288,7 @@
     color: #fff;
     text-align: center;
     text-shadow: 0 0.1875rem 0.3125rem #1c1f21;
-    padding: 40px 4px;
+    padding: 2.6rem 0 2.6rem 29.3rem;
     letter-spacing: 0.25rem;
   }
   #scroll-down {
@@ -299,12 +298,6 @@
     cursor: pointer;
   }
   #scroll-down .scroll-down-effects {
-    position: relative;
-    width: 100%;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
-    font-size: 30px;
-    line-height: 1.5;
     -webkit-animation: scroll-down-effect 1.5s alternate infinite
       cubic-bezier(0.2, 0.65, 0.6, 1);
     -moz-animation: scroll-down-effect 1.5s alternate infinite
@@ -322,7 +315,7 @@
       transform: translateY(0px);
     }
     to {
-      transform: translateY(32px);
+      transform: translateY(3.2rem);
     }
   }
 
