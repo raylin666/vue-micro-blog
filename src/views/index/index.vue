@@ -20,7 +20,7 @@
     </a-row>
 
     <a-row>
-      <a-col :span="1" :offset="11" style="padding-left: 2.5rem">
+      <a-col :span="24" style="padding-left: 47.8vw">
         <div id="scroll-down" @click="goContentView">
           <svg
             class="icon scroll-down-effects"
