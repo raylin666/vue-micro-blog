@@ -20,7 +20,7 @@
     </a-row>
 
     <a-row>
-      <a-col :span="24" style="padding-left: 47.8vw">
+      <a-col :span="24" style="padding-left: 48.3vw">
         <div id="scroll-down" @click="goContentView">
           <svg
             class="icon scroll-down-effects"
@@ -87,7 +87,7 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, onMounted } from 'vue'
+  import { ref, onMounted, onUnmounted } from 'vue'
   import { requestIndexArticleList } from '@/api/article'
   import {
     LayoutHeaderMenu,
@@ -124,6 +124,20 @@
     document.getElementById('content')?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  // 监听页面滚动事件
+  const onScroll = function (e) {
+    if (e.target.scrollTop > 60) {
+      document
+        .getElementById('scroll-down')
+        .getElementsByClassName('scroll-down-effects')[0].style.display = 'none'
+    } else {
+      document
+        .getElementById('scroll-down')
+        .getElementsByClassName('scroll-down-effects')[0].style.display =
+        'block'
+    }
+  }
+
   const images = [image1, image2, image1, image2]
 
   // 列表数据
@@ -136,6 +150,9 @@
   const size = 10
 
   onMounted(() => {
+    // 监听页面滚动事件
+    window.addEventListener('scroll', onScroll, true)
+
     listItem.value = [
       {
         id: 1,
@@ -260,6 +277,10 @@
         listCount.value = parseInt(response.data.count)
       }
     )
+  })
+
+  onUnmounted(() => {
+    window.removeEventListener('scroll', onScroll, true)
   })
 </script>
 
