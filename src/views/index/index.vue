@@ -300,7 +300,7 @@
     color: #fff;
     text-align: center;
     text-shadow: 0 0.1875rem 0.3125rem #1c1f21;
-    padding: 0 7.6rem;
+    padding: 0 145px;
     letter-spacing: 0.25rem;
   }
   .vue-typed-style {
@@ -309,7 +309,7 @@
     color: #fff;
     text-align: center;
     text-shadow: 0 0.1875rem 0.3125rem #1c1f21;
-    padding: 2.6rem 0 2.6rem 29.3rem;
+    padding: 44px 0 44px 567px;
     letter-spacing: 0.25rem;
   }
   #scroll-down {
