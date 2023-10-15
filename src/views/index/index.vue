@@ -42,7 +42,7 @@
 
     <a-row id="content" ref="view-content">
       <a-col :span="3"></a-col>
-      <a-col :span="18">
+      <a-col :span="20">
         <a-row>
           <a-col :span="16">
             <a-carousel
@@ -52,7 +52,7 @@
               indicator-position="outer"
               :style="{
                 width: '100%',
-                height: '240px'
+                height: '320px'
               }"
             >
               <a-carousel-item
@@ -78,7 +78,9 @@
             </div>
           </a-col>
 
-          <a-col :span="8"></a-col>
+          <a-col :span="6">
+            <LayoutSiderMe />
+          </a-col>
         </a-row>
       </a-col>
       <a-col :span="3"></a-col>
@@ -92,6 +94,7 @@
   import {
     LayoutHeaderMenu,
     LayoutListItemArticle,
+    LayoutSiderMe,
     Particles,
     VueTyped
   } from '@/components'
@@ -125,16 +128,16 @@
   }
 
   // 监听页面滚动事件
-  const onScroll = function (e) {
-    if (e.target.scrollTop > 60) {
-      document
-        .getElementById('scroll-down')
-        .getElementsByClassName('scroll-down-effects')[0].style.display = 'none'
-    } else {
-      document
-        .getElementById('scroll-down')
-        .getElementsByClassName('scroll-down-effects')[0].style.display =
-        'block'
+  const onScroll = function (e: any) {
+    let scrollDown = document.getElementById('scroll-down')
+    if (e.target.scrollTop > 60 && scrollDown) {
+      scrollDown.getElementsByClassName(
+        'scroll-down-effects'
+      )[0].style.display = 'none'
+    } else if (scrollDown) {
+      scrollDown.getElementsByClassName(
+        'scroll-down-effects'
+      )[0].style.display = 'block'
     }
   }
 
@@ -156,7 +159,7 @@
     listItem.value = [
       {
         id: 1,
-        title: ' CSS3 实现翻转动效',
+        title: ' CSS3 实现翻转动效司法考试加分 无法抗拒是否是发KFJ 粉丝疯狂',
         cover: image1,
         time: '2023年02月10日 20时23分',
         category: [
@@ -170,8 +173,9 @@
           }
         ],
         summary:
-          '快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck',
-        avatar: '林山',
+          '快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快',
+        avatar: image2,
+        author: '林山',
         zanCount: 20,
         collectionCount: 0,
         commentCount: 12,
@@ -194,7 +198,8 @@
         ],
         summary:
           '快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck',
-        avatar: '林山',
+        avatar: image1,
+        author: '林山',
         zanCount: 20,
         collectionCount: 0,
         commentCount: 12,
@@ -217,7 +222,8 @@
         ],
         summary:
           '快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck',
-        avatar: '林山',
+        avatar: image2,
+        author: '林山',
         zanCount: 20,
         collectionCount: 0,
         commentCount: 12,
@@ -240,7 +246,8 @@
         ],
         summary:
           '快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck',
-        avatar: '林山',
+        avatar: image1,
+        author: '林山',
         zanCount: 20,
         collectionCount: 0,
         commentCount: 12,
@@ -263,7 +270,8 @@
         ],
         summary:
           '快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck',
-        avatar: '林山',
+        avatar: image2,
+        author: '林山',
         zanCount: 20,
         collectionCount: 0,
         commentCount: 12,

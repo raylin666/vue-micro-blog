@@ -1,7 +1,7 @@
 <template>
   <a-row>
     <a-col :span="8">
-      <a-image width="100%" height="180" :src="listItem?.cover" />
+      <a-image class="cover" alt="cover" fit="cover" :src="listItem?.cover" />
     </a-col>
     <a-col :span="16">
       <div class="info">
@@ -13,13 +13,14 @@
         <div style="float: left">
           <a-space size="large">
             <a-avatar :size="20">
-              <img alt="avatar" :src="listItem?.avatar" />
+              <img
+                class="avatar"
+                alt="avatar"
+                fit="cover"
+                :src="listItem?.avatar"
+              />
             </a-avatar>
-            <span class="username"
-              ><a-tag color="rgb(251 251 251)">{{
-                listItem?.author
-              }}</a-tag></span
-            >
+            <span class="username">{{ listItem?.author }}</span>
           </a-space>
         </div>
         <div class="tag">
@@ -88,35 +89,52 @@
 </script>
 
 <style lang="less" scoped>
+  :deep(.arco-image.cover) {
+    .arco-image-img {
+      width: 100%;
+      height: 220px;
+    }
+  }
   .info {
     padding-left: 20px;
     .title,
     a {
       color: transparent;
-      background: linear-gradient(to right, #181819, #2a3231, #8210e9, #000000);
+      background: linear-gradient(to right, #1bdac6, #2a3231, #e91084, #26d216);
       -webkit-background-clip: text;
-      font-size: 18px;
+      font-size: 24px;
       font-weight: 420;
+      height: 40px;
+      line-height: 40px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       margin-bottom: 14px;
       cursor: pointer;
     }
     .tag {
       float: right;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
     .desc {
       clear: both;
-      font-size: 14px;
-      line-height: 24px;
+      font-size: 16px;
+      line-height: 28px;
       overflow: hidden;
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 3;
-      margin-bottom: 12px;
-      height: 71px;
+      margin-bottom: 18px;
+      height: 82px;
+      color: #5f5f5f;
+    }
+    .username {
+      font-size: 16px;
+      margin-left: -20px;
+      color: #5f5f5f;
     }
     .action {
-      color: #b2b2b2;
+      color: #5f5f5f;
       .time-icon {
         font-size: 20px;
         margin-top: 6px;
