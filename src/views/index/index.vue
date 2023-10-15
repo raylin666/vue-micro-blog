@@ -80,6 +80,10 @@
 
           <a-col :span="6">
             <LayoutSiderMe />
+            <br />
+            <LayoutSiderNotice />
+            <br />
+            <LayoutSiderMeRecord />
           </a-col>
         </a-row>
       </a-col>
@@ -95,6 +99,8 @@
     LayoutHeaderMenu,
     LayoutListItemArticle,
     LayoutSiderMe,
+    LayoutSiderNotice,
+    LayoutSiderMeRecord,
     Particles,
     VueTyped
   } from '@/components'
