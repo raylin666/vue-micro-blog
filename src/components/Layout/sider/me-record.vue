@@ -21,8 +21,8 @@
         本站已运行 <span style="color: #54dc63; font-weight: 720">2274</span> 天
         <a-progress
           :color="{
-            '0%': 'blue',
-            '100%': 'red'
+            '0%': '#44ff00',
+            '100%': '#29baff'
           }"
           status="normal"
           size="large"
@@ -31,11 +31,11 @@
       </div>
       <div class="today">
         今日已经过去
-        <span style="color: #271de2; font-weight: 720">21</span> 小时
+        <span style="color: rgb(244 48 48); font-weight: 720">21</span> 小时
         <a-progress
           :color="{
-            '0%': '#00f5f0',
-            '100%': '#ed47ee'
+            '0%': 'rgb(244 48 48)',
+            '100%': 'rgb(255 253 41)'
           }"
           status="normal"
           size="large"
@@ -46,8 +46,8 @@
         这周已经过去 <span style="color: #bb2beb; font-weight: 720">6</span> 天
         <a-progress
           :color="{
-            '0%': 'red',
-            '100%': 'rgb(var(--success-6))'
+            '0%': '#ff44f1',
+            '100%': '#ffcb97'
           }"
           status="normal"
           size="large"
@@ -58,8 +58,8 @@
         本月已经过去 <span style="color: #f6671f; font-weight: 720">18</span> 天
         <a-progress
           :color="{
-            '0%': '#00ffd3',
-            '100%': '#e1ef2a'
+            '0%': 'rgb(255 150 68)',
+            '100%': 'rgb(239 42 42)'
           }"
           status="normal"
           size="large"
@@ -67,11 +67,12 @@
         />
       </div>
       <div class="year">
-        今年已经过去 <font color="blue">187</font> 天
+        今年已经过去
+        <span style="color: rgb(66 52 243); font-weight: 720">187</span> 天
         <a-progress
           :color="{
-            '0%': '#f3a934',
-            '100%': '#2a34ef'
+            '0%': 'rgb(66 52 243)',
+            '100%': 'rgb(83 255 225)'
           }"
           status="normal"
           size="large"

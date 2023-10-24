@@ -73,7 +73,6 @@
             <div class="article-list">
               <div class="item" v-for="(item, index) in listItem" :key="index">
                 <LayoutListItemArticle :list-item="item" />
-                <a-divider />
               </div>
             </div>
           </a-col>
@@ -179,7 +178,7 @@
           }
         ],
         summary:
-          '快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快',
+          '快速反击的看法是击的看法是咖咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck快速反击的看法是咖啡wreck速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快速反击的看法是咖啡wreck，快',
         avatar: image2,
         author: '林山',
         zanCount: 20,

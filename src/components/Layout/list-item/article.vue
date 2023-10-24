@@ -1,5 +1,13 @@
 <template>
-  <a-row>
+  <a-row
+    style="
+      border: 1px solid rgb(244, 244, 244);
+      border-radius: 6px;
+      padding: 10px;
+      box-shadow: rgb(244, 244, 244) 0px 3px 5px;
+      margin-bottom: 20px;
+    "
+  >
     <a-col :span="8">
       <a-image class="cover" alt="cover" fit="cover" :src="listItem?.cover" />
     </a-col>
@@ -100,7 +108,13 @@
     .title,
     a {
       color: transparent;
-      background: linear-gradient(to right, #1bdac6, #2a3231, #e91084, #26d216);
+      background: linear-gradient(
+        to right,
+        #000000,
+        #fd915b,
+        rgb(69, 69, 255),
+        #000000
+      );
       -webkit-background-clip: text;
       font-size: 24px;
       font-weight: 420;
