@@ -108,13 +108,7 @@
     .title,
     a {
       color: transparent;
-      background: linear-gradient(
-        to right,
-        #000000,
-        #fd915b,
-        rgb(69, 69, 255),
-        #000000
-      );
+      background: linear-gradient(to right, #0d459f, #040101, #0074e7, #000000);
       -webkit-background-clip: text;
       font-size: 24px;
       font-weight: 420;
