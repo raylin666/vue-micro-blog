@@ -13,25 +13,13 @@
       <span class="mac"></span>
     </template>
     <template #title>
-      <icon-notification size="24" style="float: left" />
+      <icon-clock-circle size="24" style="float: left" />
       <span>时间记录</span>
     </template>
     <div class="content">
-      <div class="domain">
-        本站已运行 <span style="color: #54dc63; font-weight: 720">2274</span> 天
-        <a-progress
-          :color="{
-            '0%': '#44ff00',
-            '100%': '#29baff'
-          }"
-          status="normal"
-          size="large"
-          :percent="0.6"
-        />
-      </div>
       <div class="today">
-        今日已经过去
-        <span style="color: rgb(244 48 48); font-weight: 720">21</span> 小时
+        今日已过去小时数
+        <a-tag style="float: right" color="rgb(244 48 48)">21</a-tag>
         <a-progress
           :color="{
             '0%': 'rgb(244 48 48)',
@@ -42,8 +30,21 @@
           :percent="0.7"
         />
       </div>
+      <div class="domain">
+        本站已运行总天数
+        <a-tag style="float: right" color="#54dc63">2274</a-tag>
+        <a-progress
+          :color="{
+            '0%': '#44ff00',
+            '100%': '#29baff'
+          }"
+          status="normal"
+          size="large"
+          :percent="0.6"
+        />
+      </div>
       <div class="week">
-        这周已经过去 <span style="color: #bb2beb; font-weight: 720">6</span> 天
+        这周已过去总天数 <a-tag style="float: right" color="#bb2beb">6</a-tag>
         <a-progress
           :color="{
             '0%': '#ff44f1',
@@ -55,7 +56,7 @@
         />
       </div>
       <div class="month">
-        本月已经过去 <span style="color: #f6671f; font-weight: 720">18</span> 天
+        本月已过去总天数 <a-tag style="float: right" color="#f6671f">18</a-tag>
         <a-progress
           :color="{
             '0%': 'rgb(255 150 68)',
@@ -67,8 +68,8 @@
         />
       </div>
       <div class="year">
-        今年已经过去
-        <span style="color: rgb(66 52 243); font-weight: 720">187</span> 天
+        今年已过去总天数
+        <a-tag style="float: right" color="rgb(66 52 243)">187</a-tag>
         <a-progress
           :color="{
             '0%': 'rgb(66 52 243)',

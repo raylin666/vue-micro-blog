@@ -83,6 +83,10 @@
             <LayoutSiderNotice />
             <br />
             <LayoutSiderMeRecord />
+            <br />
+            <LayoutSiderHotArticle />
+            <br />
+            <LayoutSiderStory />
           </a-col>
         </a-row>
       </a-col>
@@ -100,6 +104,8 @@
     LayoutSiderMe,
     LayoutSiderNotice,
     LayoutSiderMeRecord,
+    LayoutSiderHotArticle,
+    LayoutSiderStory,
     Particles,
     VueTyped
   } from '@/components'
