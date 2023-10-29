@@ -26,7 +26,7 @@ const routes = [
     meta: {},
     children: [
       {
-        path: 'info',
+        path: 'info/:id',
         name: 'articleInfo',
         component: () => import('@/views/article/info.vue'),
         meta: {}

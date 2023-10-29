@@ -9,7 +9,9 @@
     "
   >
     <a-col :span="8">
-      <a-image class="cover" alt="cover" fit="cover" :src="listItem?.cover" />
+      <a href="#">
+        <a-image class="cover" alt="cover" fit="cover" :src="listItem?.cover" />
+      </a>
     </a-col>
     <a-col :span="16">
       <div class="info">
@@ -94,7 +96,7 @@
   })
 
   function jumpArticleInfo(id: number | undefined) {
-    router.push({ name: 'articleInfo', params: { id: id } })
+    return router.push({ name: 'articleInfo', params: { id: id } })
   }
 </script>
 

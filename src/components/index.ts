@@ -10,6 +10,8 @@ import LayoutSiderStory from '@/components/Layout/sider/story.vue'
 
 import Particles from '@/components/Particles/index.vue'
 import VueTyped from '@/components/VueTyped/index.vue'
+import EditorIndex from '@/components/Editor/index.vue'
+import EditorPreview from '@/components/Editor/preview.vue'
 
 export {
   // 页面相关组件
@@ -24,5 +26,8 @@ export {
   LayoutSiderStory,
   // 动效相关组件
   Particles,
-  VueTyped
+  VueTyped,
+  // 编辑器
+  EditorIndex,
+  EditorPreview
 }
