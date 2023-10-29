@@ -1,4 +1,5 @@
 import LayoutHeaderMenu from '@/components/Layout/header-menu.vue'
+import LayoutSider from '@/components/Layout/sider.vue'
 import LayoutListItemArticle from '@/components/Layout/list-item/article.vue'
 import LayoutSiderHotArticle from '@/components/Layout/sider/hot-article.vue'
 import LayoutSiderSign from '@/components/Layout/sider/sign.vue'
@@ -13,6 +14,7 @@ import VueTyped from '@/components/VueTyped/index.vue'
 export {
   // 页面相关组件
   LayoutHeaderMenu,
+  LayoutSider,
   LayoutListItemArticle,
   LayoutSiderHotArticle,
   LayoutSiderSign,

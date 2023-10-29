@@ -7,15 +7,21 @@ export interface ArticleListItem {
   id: number
   cover: string
   title: string
-  time: string
+  created_at: string
   category?: TagsItem[]
   summary: string
   avatar: string
   author: string
-  zanCount: number
-  collectionCount: number
-  commentCount: number
-  viewCount: number
+  zan_count: number
+  collection_count: number
+  comment_count: number
+  view_count: number
+  share_count: number
+  recommend_flag: number
+  commented_flag: number
+  source: string
+  user_id: number
+  last_commented_at?: string
 }
 
 /**
@@ -23,17 +29,7 @@ export interface ArticleListItem {
  */
 export interface ArticleList {
   list: Array<ArticleListItem>
-  count: string
-}
-
-/**
- * 最新文章列表接口
- */
-export interface NewArticleListItem {
-  id: number
-  title: string
-  zanCount: number
-  time: string
+  total: number
 }
 
 /**
@@ -49,10 +45,10 @@ export interface ArticleInfo {
   summary: string
   avatar: string
   author: string
-  zanCount: number
-  collectionCount: number
-  commentCount: number
-  viewCount: number
+  zan_count: number
+  collection_count: number
+  comment_count: number
+  view_count: number
   content: string
   prevArticle?: { id: number; title: string }
   nextArticle?: { id: number; title: string }

@@ -34,7 +34,9 @@
         <div class="tag">
           <a-space>
             <span v-for="(item, index) in listItem?.category" :key="index">
-              <a-tag :color="item.color">{{ item.name }}</a-tag>
+              <a-tag :color="item.color">
+                <icon-tag style="color: #ffffff" /> &nbsp;{{ item.name }}</a-tag
+              >
             </span>
           </a-space>
         </div>
@@ -45,25 +47,25 @@
           <a-row>
             <a-col :span="12">
               <IconClockCircle class="time-icon" />
-              <div class="time">{{ listItem?.time }}</div>
+              <div class="time">{{ listItem?.created_at }}</div>
             </a-col>
             <a-col :span="12">
               <a-space size="large" style="float: right; margin-top: 5px">
                 <div>
                   <IconThumbUp class="ac-icon" />
-                  <div class="ac-value">{{ listItem?.zanCount }}</div>
+                  <div class="ac-value">{{ listItem?.zan_count }}</div>
                 </div>
                 <div>
                   <IconHeart class="ac-icon" />
-                  <div class="ac-value">{{ listItem?.collectionCount }}</div>
+                  <div class="ac-value">{{ listItem?.collection_count }}</div>
                 </div>
                 <div>
                   <IconMessage class="ac-icon" />
-                  <div class="ac-value">{{ listItem?.commentCount }}</div>
+                  <div class="ac-value">{{ listItem?.comment_count }}</div>
                 </div>
                 <div>
                   <IconEye class="ac-icon" />
-                  <div class="ac-value">{{ listItem?.viewCount }}</div>
+                  <div class="ac-value">{{ listItem?.view_count }}</div>
                 </div>
               </a-space>
             </a-col>

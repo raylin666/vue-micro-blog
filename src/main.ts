@@ -10,6 +10,7 @@ import store from './store'
 import './mock'
 import Particles from 'particles.vue3'
 import VueTyped from 'vue3typed'
+import '@/utils/axios/interceptor'
 
 const app = createApp(App)
 

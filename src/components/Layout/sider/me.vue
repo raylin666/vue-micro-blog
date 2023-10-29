@@ -13,7 +13,11 @@
     <div class="me-main">
       <div class="avatar">
         <a-avatar :size="80" :style="{ padding: '3px', marginLeft: '38%' }">
-          <img alt="avatar" fit="cover" :src="image2" />
+          <img
+            alt="avatar"
+            fit="cover"
+            src="https://fk.xt666.cc/uploads/images/d07ede74bb60f2c93ea15308b4c6a631.gif"
+          />
         </a-avatar>
       </div>
       <div class="username">
@@ -51,9 +55,7 @@
   </a-card>
 </template>
 
-<script setup lang="ts">
-  import image2 from '@/assets/image/background_1.jpg'
-</script>
+<script setup lang="ts"></script>
 
 <style lang="less" scoped>
   :deep(.arco-card-body) {
