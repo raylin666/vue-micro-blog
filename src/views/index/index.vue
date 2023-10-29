@@ -4,6 +4,7 @@
     animation-name="card"
     show-arrow="never"
     indicator-position="outer"
+    indicator-type="line"
     :style="{
       width: '100%',
       height: '320px'
@@ -14,12 +15,14 @@
       :style="{ width: '60%' }"
       :key="image"
     >
-      <img
-        :src="image"
-        :style="{
-          width: '100%'
-        }"
-      />
+      <a href="#">
+        <img
+          :src="image"
+          :style="{
+            width: '100%'
+          }"
+        />
+      </a>
     </a-carousel-item>
   </a-carousel>
 
@@ -36,10 +39,12 @@
   import { requestIndexArticleList } from '@/api/article'
   import { LayoutListItemArticle } from '@/components'
 
-  import image1 from '@/assets/image/background.jpg'
-  import image2 from '@/assets/image/background_1.webp'
-
-  const images = [image1, image2, image1, image2]
+  const images = [
+    'https://p8.qhimg.com/bdr/__85/t01eb86d36c1180054b.jpg',
+    'https://p8.qhimg.com/bdr/__85/t013d9edca1c249aa2f.jpg',
+    'https://p9.qhimg.com/bdr/__85/t0169d6001972310e45.jpg',
+    'https://p7.qhimg.com/bdr/__85/t0186e37a47bab90cd1.jpg?key=708072'
+  ]
 
   // 列表数据
   const listItem = ref()

@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+export const BASIC_LAYOUT = () => import('@/layout/basic-layout.vue')
 export const INDEX_LAYOUT = () => import('@/layout/index-layout.vue')
+export const ARTICLE_LAYOUT = () => import('@/layout/article-layout.vue')
 
 const routes = [
   {
@@ -13,6 +15,20 @@ const routes = [
         path: '',
         name: 'index',
         component: () => import('@/views/index/index.vue'),
+        meta: {}
+      }
+    ]
+  },
+  {
+    path: '/article',
+    name: 'article',
+    component: ARTICLE_LAYOUT,
+    meta: {},
+    children: [
+      {
+        path: 'info',
+        name: 'articleInfo',
+        component: () => import('@/views/article/info.vue'),
         meta: {}
       }
     ]

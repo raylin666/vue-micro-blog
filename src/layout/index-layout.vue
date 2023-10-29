@@ -1,6 +1,6 @@
 <template>
   <Particles />
-  <div id="header">
+  <div id="headerIndex">
     <LayoutHeaderMenu />
 
     <a-row>
@@ -131,7 +131,7 @@
 
     setInterval(() => {
       currentBgIndex.value = (currentBgIndex.value + 1) % bgImages.length
-      let idHeader = document.getElementById('header')
+      let idHeader = document.getElementById('headerIndex')
       if (idHeader) {
         idHeader.style.backgroundImage = `url(` + currentBgImage() + `)`
       }
@@ -144,7 +144,7 @@
 </script>
 
 <style scoped>
-  #header {
+  #headerIndex {
     background-image: url('@/assets/image/background/0.jpeg');
     background-position: center;
     background-repeat: no-repeat;
@@ -152,12 +152,12 @@
     height: 100vh;
     transition: background-image 2s ease-in-out;
   }
-  #header .header-content {
+  #headerIndex .header-content {
     padding-top: 38vh;
     height: 93vh;
     box-shadow: 0 100px 100px #ebfdfb;
   }
-  #header .header-content .center-text {
+  #headerIndex .header-content .center-text {
     font-size: 2.2rem;
     font-weight: 700;
     color: #fff;
