@@ -1,8 +1,8 @@
 import { createPinia } from 'pinia'
-import useCounterStore from './counter'
+import articleInfoStore from './article-info.store'
 
 const pinia = createPinia()
 
-export { useCounterStore }
+export { articleInfoStore }
 
 export default pinia

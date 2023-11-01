@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 export const BASIC_LAYOUT = () => import('@/layout/basic-layout.vue')
 export const INDEX_LAYOUT = () => import('@/layout/index-layout.vue')
-export const ARTICLE_LAYOUT = () => import('@/layout/article-layout.vue')
+export const ARTICLE_INFO_LAYOUT = () =>
+  import('@/layout/article-info-layout.vue')
 
 const routes = [
   {
@@ -22,7 +23,7 @@ const routes = [
   {
     path: '/article',
     name: 'article',
-    component: ARTICLE_LAYOUT,
+    component: BASIC_LAYOUT,
     meta: {},
     children: [
       {

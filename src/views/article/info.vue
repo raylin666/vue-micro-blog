@@ -7,27 +7,35 @@
 <script setup lang="ts">
   import { ref, onMounted } from 'vue'
   import { EditorPreview } from '@/components'
-  import { requestArticleInfo } from '@/api/article'
   import { useRouter } from 'vue-router'
-  const router = useRouter()
+  import { isString } from '@/utils/is'
+  import { articleInfoStore } from '@/store'
 
+  const router = useRouter()
+  const infoStore = articleInfoStore()
+
+  const id = ref(0)
   const content = ref('')
   onMounted(() => {
-    const id = 31 // router.params?.id
-    if (id <= 1) {
+    if (isString(router.currentRoute.value.params.id)) {
+      let parseIntId = parseInt(router.currentRoute.value.params.id)
+      if (parseIntId > 0) {
+        id.value = parseIntId
+      }
+    }
+
+    // id.value = 0
+    if (id.value < 1) {
       router.push({ name: 'index' })
       return
     }
 
     // 请求文章详情数据
-    requestArticleInfo(id).then((response: any) => {
-      if (response.data.ok) {
-        content.value = response.data.content
-      } else {
-        router.push({ name: 'index' })
-        return
-      }
-    })
+    infoStore.info(id.value)
+    if (infoStore.getInfo() == null) {
+      router.push({ name: 'index' })
+      return
+    }
   })
 </script>
 

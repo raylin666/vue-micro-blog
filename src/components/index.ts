@@ -1,4 +1,7 @@
-import LayoutHeaderMenu from '@/components/Layout/header-menu.vue'
+import LayoutHeaderMenu from '@/components/Layout/header/menu.vue'
+import LayoutHeaderContent from '@/components/Layout/header/content.vue'
+import LayoutHeaderScrollDown from '@/components/Layout/header/scroll-down.vue'
+import LayoutHeader from '@/components/Layout/header.vue'
 import LayoutSider from '@/components/Layout/sider.vue'
 import LayoutListItemArticle from '@/components/Layout/list-item/article.vue'
 import LayoutSiderHotArticle from '@/components/Layout/sider/hot-article.vue'
@@ -16,6 +19,9 @@ import EditorPreview from '@/components/Editor/preview.vue'
 export {
   // 页面相关组件
   LayoutHeaderMenu,
+  LayoutHeaderContent,
+  LayoutHeaderScrollDown,
+  LayoutHeader,
   LayoutSider,
   LayoutListItemArticle,
   LayoutSiderHotArticle,

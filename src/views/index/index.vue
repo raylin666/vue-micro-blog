@@ -31,6 +31,8 @@
     <div class="item" v-for="(item, index) in listItem" :key="index">
       <LayoutListItemArticle :list-item="item" />
     </div>
+
+    <a-pagination :total="listCount" size="large" show-page-size />
   </div>
 </template>
 
