@@ -2,8 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 export const BASIC_LAYOUT = () => import('@/layout/basic-layout.vue')
 export const INDEX_LAYOUT = () => import('@/layout/index-layout.vue')
-export const ARTICLE_INFO_LAYOUT = () =>
-  import('@/layout/article-info-layout.vue')
 
 const routes = [
   {

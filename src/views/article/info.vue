@@ -10,6 +10,7 @@
   import { useRouter } from 'vue-router'
   import { isString } from '@/utils/is'
   import { articleInfoStore } from '@/store'
+  import { requestArticleInfo } from '@/api/article'
 
   const router = useRouter()
   const infoStore = articleInfoStore()
@@ -31,11 +32,15 @@
     }
 
     // 请求文章详情数据
-    infoStore.info(id.value)
-    if (infoStore.getInfo() == null) {
-      router.push({ name: 'index' })
-      return
-    }
+    requestArticleInfo(id.value).then((response: any) => {
+      if (response.data.ok) {
+        content.value = response.data.data.content
+        infoStore.setInfo(response.data.data)
+      } else {
+        router.push({ name: 'index' })
+        return
+      }
+    })
   })
 </script>
 

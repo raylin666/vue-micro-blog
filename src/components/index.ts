@@ -16,6 +16,9 @@ import VueTyped from '@/components/VueTyped/index.vue'
 import EditorIndex from '@/components/Editor/index.vue'
 import EditorPreview from '@/components/Editor/preview.vue'
 
+import LayoutHeaderContentDefaultShow from '@/components/Layout/header/content-default-show.vue'
+import LayoutHeaderContentArticleInfoShow from '@/components/Layout/header/content-article-info-show.vue'
+
 export {
   // 页面相关组件
   LayoutHeaderMenu,
@@ -30,6 +33,9 @@ export {
   LayoutSiderNotice,
   LayoutSiderMeRecord,
   LayoutSiderStory,
+  // Header Content 显示内容定制化模版
+  LayoutHeaderContentDefaultShow,
+  LayoutHeaderContentArticleInfoShow,
   // 动效相关组件
   Particles,
   VueTyped,

@@ -9,18 +9,12 @@ const articleInfoStore = defineStore('article.info', {
     }
   },
   actions: {
-    // 请求文章详情数据
-    async info(id: number) {
-      this.$reset()
-      await requestArticleInfo(id).then((response: any) => {
-        if (response.data.ok) {
-          this.info = response.data.data
-        }
-      })
+    setInfo(info: ArticleInfo) {
+      this.$state.info = info
     },
 
     getInfo(): ArticleInfo | null {
-      return this.info
+      return this.$state.info
     }
   }
 })
